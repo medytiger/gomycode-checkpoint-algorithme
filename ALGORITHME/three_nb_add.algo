@@ -1,0 +1,39 @@
+ALGORITHM cout-optimal
+VAR
+    nbkm,nbj,cout-km,cout-nbj,cout-opt : INTEGER;
+    r1,r2,r3,p_d,ins,TVA : INTEGER;
+BEGIN
+    Write (value nbkm)
+    Read (nbkm)
+
+    Write (value nbj)
+    Read (nbj)
+
+    IF (nbkm > 0 and nbkm =< 100) THEN
+        cout-km = (r1*nbkm) + (ins*nbj)
+        cout-km = cout-km + 18%(cout-km)
+    END_IF
+
+    IF (nbkm > 100 and nbkm =< 1000) THEN
+        cout-km = (r1*100) + r2*(nbkm - 100) + (ins*nbj)
+        cout-km = cout-km + 18%(cout-km)
+    END_IF
+
+    IF (nbkm > 1000) THEN
+        cout-km = (r1*100) + (r2*900) + r3*(nbkm - 1000) + (ins*nbj)
+        cout-km = cout-km + 18%(cout-km)
+    END_IF
+    
+
+    cout-nbj = (nbj * p_d) + (ins*nbj)
+    cout-nbj = cout-nbj + 18%(cout-nbj)
+
+    IF(cout-km > cout-nbj)THEN
+    cout-opt = cout-nbj
+
+    IF(cout-km < cout-nbj)THEN
+    cout-opt = cout-km
+
+    Write ("le cout optimal est" : cout-opt)
+
+END

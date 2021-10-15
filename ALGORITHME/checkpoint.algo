@@ -1,0 +1,27 @@
+ALGORITHME Lecture_phrase
+VAR
+    cpt,nbp,nbm,nbv:entier
+    mot,phrase:chaînes
+COMMENCER
+    écrire("Veuuillez entrer la phrase")
+    lire (expression)
+    PENDANT (c<>'.') FAIRE
+        cpt:=cpt+1
+    END_WHILE
+    écrire (cpt)
+
+    nbp:=len(phrase)
+    write("le nombre de caractères est :"nbp)
+
+    SI (cpt:='') ALORS
+        nbm:=nbm+1
+    FIN SI
+    écrire("le nombre de mot est "nbm)
+
+    POUR i DE 0 À longueur-1 FAIRE
+        IF (phrase[i]='a' ou phrase[i]='e' ou phrase[i]='o' ou phrase[i]='i' ou phrase[i]='u' ou phrase[i ]='y') ALORS
+            nbv:=nbv+1
+        FIN SI
+    END_FOR
+    écrire("le nombre de voyelle dans la phrase est "nbv)
+FINIR
